@@ -1,0 +1,18 @@
+This is a python script which is a variation of Jeff Sharky's colored logcat script.
+
+To use:
+
+colored-logcat.py [keyword]
+
+If the optional keyword is supplied, then each occurence of the keyword will be highlighted
+in the output.
+
+You can also use:
+
+adb logcat -v threadtime [other adb-options] | colored-logcat.py
+
+For example to just see Vold output, you could use:
+
+adb logcat -v threadtime -d -s 'Vold:*' | colored-logcat.py
+
+This script has only been tested under linux.
