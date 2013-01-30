@@ -111,7 +111,7 @@ retag = re.compile("^([0-9][0-9]-[0-9][0-9]) ([0-9][0-9]:[0-9][0-9]:[0-9][0-9]\.
 
 # if someone is piping in to us, use stdin as input.  if not, invoke adb logcat
 if os.isatty(sys.stdin.fileno()):
-    input = os.popen("adb logcat -v threadtime")
+    input = os.popen("adb logcat -v threadtime memalloc:I ONCRPC:S EventHub:I OMX.google.mp3.decoder:V")
 else:
     input = sys.stdin
 if len(sys.argv) == 2:
